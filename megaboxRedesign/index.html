@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<link>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage.js</title>
+
+    <link rel="stylesheet" href="fullpage.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- jquery cdn -->
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+
+    <!-- fullpage js -->
+    <script src="./fullpage.min.js"></script>
+
+    <!-- icon -->
+    <script src="https://kit.fontawesome.com/0c5e43ce56.js" crossorigin="anonymous"></script>
+
+    <!-- font : NOTO SANS KR -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+    </style>
+        
+
+</head>
+<body>
+    <div id="header">Header</div>
+    
+    <div id="full-page">
+        
+        <div class="section s0">
+                <h3>MEET PLAY SHARE, MEGABOX</h3>
+                <h1><span>사람들과 공유할 수 있는,</span><br> 공간경험을 만듭니다.</h1>
+                    <button>VIEW MORE</button>
+                <!-- 버튼, 아이콘 넣기 -->
+                <div style="font-size: 30px; color:white; ">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div style="font-size: 30px; color:white; ">
+                <i class="fa-brands fa-facebook-square"></i>
+                </div>
+                <div style="font-size: 30px; color:white; ">
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+                <!-- 글씨 애니메이션 -->
+                <p>MEET PLAY SHARE, MEGABOX | MEET PLAY SHARE, MEGABOX | MEET PLAY SHARE, MEGABOX | MEET PLAY SHARE, MEGABOX | MEET PLAY SHARE, MEGABOX | MEET PLAY SHARE, MEGABOX</p>
+    </div>
+
+        <div class="section s1">
+            <h1>박스오피스</h1>
+            <p>현재 가장 사람들에게 인기많은 작품</p>
+            <!-- 사진 슬라이드 넣기 -->
+
+            <button>자세히보기</button>
+
+        </div>
+
+        <div class="section s2">
+            <h3>MEGABOX</h3>
+            <h1>FILM SOCIETY</h1>
+            <h2>메가박스의<br>필름 소사이어티를 소개합니다.</h2>
+            <button>자세히보기</button>
+            <p>인생의 영화를 만나는 방법</p>
+            <p>필름소사이어티는 좋은 영화를 선별해 상영하고 깊이있는 영화 연계<br>
+                프로그램을 제공하는 메가박스의 좋은 영화 큐레이션 브랜드 입니다.</p>
+            <!-- 사진 슬라이드 넣기 -->    
+        </div>
+
+        <div class="section s3">
+            <h3>혜택</h3>
+            <p>그외 메가박스에서 진행하는 다양한 문화관광</p>
+            <!-- 펼침 아이콘 -->
+                <div class="btn-container">
+                    <div class="arrow">
+                        <i class="fa-solid fa-angle-down"></i>
+                    </div>
+                </div>
+        </div>
+
+        <div class="section s4">
+            <h3>이벤트</h3>
+            <p>메가박스에서 준비한 이벤트 관련 정보 를 손쉽게 확인해보세요. <br> 
+                메가박스에서 준비한 이벤트 관련 정보 를 손쉽게 확인해보세요. <br>
+                메가박스에서 준비한 이벤트 관련 정보 를 손쉽게 확인해보세요.</p>
+                <button>더 많은 상품 보러가기</button>
+        </div>
+
+        <div class="section s5">
+            <h3>Brand video</h3>
+            <p>메가박스에서 사랑받은 제품과 브랜드를 매일 새로운 영상으로 
+                소식을 받아보면 편리하게 볼 수 있습니다.</p>
+                <button>자세히 보러가기</button>
+        </div>
+
+        <!-- 푸터 만들기 -->
+        <div class="intro footer">footer</div>
+
+    </div>
+
+    
+    <script>
+        new fullpage('#full-page', {
+            licensekey: '',
+            sectionsColor: ['#101011', '#101011', '#101011', '#101011', '#101011', '#101011'],
+            navigation: true,
+            navigationTooltips:['Main', 'Movie', 'Curation', 'Benefit', 'Event', 'Brand video'],
+            scrollingSpeed: 2000,
+            onLeave: function(origin,destination, direction) {
+                console.log('onLeave', origin.index, destination.index);
+            },
+            afterLoad: function(origin,destination, direction) {
+                if(destination.index == 1) {
+                    $('.s1 h5').show();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
